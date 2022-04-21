@@ -11,7 +11,7 @@ cat license.lic
   --installer=../APIGateway_7.7.20220228_Install_linux-x86-64_BN02.run \
   --license=license.lic \
   --os=centos7 \
-  --merge-dir=../merge-dir/emt/analytics \
+  --merge-dir=aga/merge-dir/analytics \
   --analytics-username=admin \
   --analytics-pass-file=aga/pass.txt \
   --fed=aga/fed/$1/aga-healthcheck-$1.fed \
