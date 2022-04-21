@@ -3,7 +3,7 @@ echo "Going to build base image, anm image and apim image"
 
 echo
 echo "Building Base Image"
-#./build_base_image.sh
+./build_base_image.sh
 
 echo
 echo "Building Admin Node Manager Image"
