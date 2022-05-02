@@ -47,6 +47,11 @@ node {
 
             targetEnvironment = BRANCH_NAME.toLowerCase()
 
+            //TODO: Later make it PROD
+            if(targetEnvironment.equals('main')){
+                targetEnvironment = 'dev'
+            }
+
             if (targetEnvironment.equalsIgnoreCase('dev')) {
                 sh './build_all.sh ${targetEnvironment} ${dateTimeSignature}'
             } else {
