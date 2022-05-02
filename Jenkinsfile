@@ -47,7 +47,6 @@ node {
 
             targetEnvironment = BRANCH_NAME.toLowerCase()
 
-            //TODO: Later make it PROD
             if (targetEnvironment.equals('main')) {
                 targetEnvironment = 'prod'
             }
