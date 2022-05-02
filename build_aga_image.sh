@@ -17,6 +17,6 @@ cat license.lic
   --fed=aga/fed/$1/aga-healthcheck-$1.fed \
   --out-image=romaicus/apim_aga:77-20220416
 
-docker tag romaicus/apim_aga:77-20220416 romaicus/apim_aga:latest
-docker push romaicus/apim_aga:77-20220416
-docker push romaicus/apim_aga:latest
+#docker tag romaicus/apim_aga:77-20220416 romaicus/apim_aga:latest
+#docker push romaicus/apim_aga:77-20220416
+#docker push romaicus/apim_aga:latest

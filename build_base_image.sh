@@ -8,6 +8,6 @@ tar xf APIGateway_7.7.20220228-DockerScripts-2.4.0.tar
   --os=centos7 \
   --out-image=romaicus/apim_base:77-20220416
 
-docker tag romaicus/apim_base:77-20220416 romaicus/apim_base:latest
-docker push romaicus/apim_base:77-20220416
-docker push romaicus/apim_base:latest
+#docker tag romaicus/apim_base:77-20220416 romaicus/apim_base:latest
+#docker push romaicus/apim_base:77-20220416
+#docker push romaicus/apim_base:latest

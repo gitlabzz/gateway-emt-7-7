@@ -14,6 +14,6 @@ docker image build \
   --build-arg MYSQL_PASSWORD=changeme \
   api_portal_build/
 
-docker tag romaicus/apim_apiportal:77-20220416 romaicus/apim_apiportal:latest
-docker push romaicus/apim_apiportal:77-20220416
-docker push romaicus/apim_apiportal:latest
+#docker tag romaicus/apim_apiportal:77-20220416 romaicus/apim_apiportal:latest
+#docker push romaicus/apim_apiportal:77-20220416
+#docker push romaicus/apim_apiportal:latest

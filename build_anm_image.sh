@@ -19,6 +19,6 @@ cat license.lic
   --parent-image=romaicus/apim_base:77-20220416 \
   --out-image=romaicus/apim_anm:77-20220416
 
-docker tag romaicus/apim_anm:77-20220416 romaicus/apim_anm:latest
-docker push romaicus/apim_anm:77-20220416
-docker push romaicus/apim_anm:latest
+#docker tag romaicus/apim_anm:77-20220416 romaicus/apim_anm:latest
+#docker push romaicus/apim_anm:77-20220416
+#docker push romaicus/apim_anm:latest
