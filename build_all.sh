@@ -1,6 +1,9 @@
 #! /bin/bash
 echo "Going to build base image, anm image and apim image"
 
+echo "Param1 >>>>>>>>>>>>>>>>>>>>>>>>>>>> ${1}"
+echo "Param2 >>>>>>>>>>>>>>>>>>>>>>>>>>>> ${2}"
+
 echo
 echo "Building Base Image"
 ./build_base_image.sh "$@"
