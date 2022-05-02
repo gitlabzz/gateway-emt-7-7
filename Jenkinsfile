@@ -38,8 +38,7 @@ node {
     }
 
     stage('Generate Image DateTime Signature') {
-        Date now = new Date()
-        dateTimeSignature = new java.text.SimpleDateFormat("YYYYMMddHHmmss", Locale.ENGLISH).format(now)
+        dateTimeSignature = new java.text.SimpleDateFormat("YYYYMMddHHmmss").format(new Date())
         echo " >>>>>>>>>>>>>>>>>> Generated Image DateTime Signature is: ${dateTimeSignature}"
     }
 
