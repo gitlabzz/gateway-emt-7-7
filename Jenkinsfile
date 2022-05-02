@@ -45,7 +45,7 @@ node {
     stage('Build API Manger Image') {
         withDockerRegistry(credentialsId: 'hub.docker.credentials', url: 'https://index.docker.io') {
 
-            targetEnvironment = branchName.toLowerCase()
+            targetEnvironment = BRANCH_NAME.toLowerCase()
 
             if (targetEnvironment.equalsIgnoreCase('dev')) {
                 sh './build_all.sh ${targetEnvironment} ${dateTimeSignature}'
