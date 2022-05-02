@@ -39,7 +39,7 @@ node {
 
     stage('Generate Image DateTime Signature') {
         Date now = new Date()
-        dateTimeSignature = "" + now[Calendar.DAY_OF_MONTH] + now.toMonth() + now.toYear() + hourOfnow[Calendar.HOUR_OF_DAY] Day + now[Calendar.MINUTE] + now[Calendar.SECOND]
+        dateTimeSignature = "" + now[Calendar.DAY_OF_MONTH] + now.toMonth() + now.toYear() + now[Calendar.HOUR_OF_DAY] + now[Calendar.MINUTE] + now[Calendar.SECOND]
         echo " >>>>>>>>>>>>>>>>>> Generated Image DateTime Signature is: ${dateTimeSignature}"
     }
 
