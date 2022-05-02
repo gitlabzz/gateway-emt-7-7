@@ -1,4 +1,6 @@
 #! /bin/bash
+RELEASE="7_7_20220228"
+TAG="${RELEASE}_${2}"
 echo
 echo "----------- Building Admin Node Manager for environment '$1' ----------- "
 tar xf APIGateway_7.7.20220228-DockerScripts-2.4.0.tar
@@ -16,9 +18,9 @@ cat license.lic
   --metrics \
   --anm-username=admin \
   --anm-pass-file=anm/anm.pass.txt \
-  --parent-image=romaicus/apim_base:$2 \
-  --out-image=romaicus/apim_anm:$2
+  --parent-image=romaicus/apim_base:$RELEASE \
+  --out-image=romaicus/apim_anm:$TAG
 
-docker tag romaicus/apim_anm:$2 romaicus/apim_anm:latest
-docker push romaicus/apim_anm:$2
-docker push romaicus/apim_anm:latest
+#docker tag romaicus/apim_anm:$TAG romaicus/apim_anm:latest
+#docker push romaicus/apim_anm:$TAG
+#docker push romaicus/apim_anm:latest

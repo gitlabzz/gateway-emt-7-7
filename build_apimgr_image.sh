@@ -1,4 +1,6 @@
 #! /bin/bash
+RELEASE="7_7_20220228"
+TAG="${RELEASE}_${2}"
 echo
 echo "----------- Building API Manager for environment '$1' ----------- "
 tar xf APIGateway_7.7.20220228-DockerScripts-2.4.0.tar
@@ -16,9 +18,9 @@ cat license.lic
   --pol=apimgr/policy/$1/bct.pol \
   --env=apimgr/environment/$1/bct.env \
   --fed-pass-file=apimgr/nopass.txt \
-  --parent-image=romaicus/apim_base:$2 \
-  --out-image=romaicus/apimgr:$2
+  --parent-image=romaicus/apim_base:$RELEASE \
+  --out-image=romaicus/apimgr:$TAG
 
-docker tag romaicus/apimgr:$2 romaicus/apimgr:latest
-docker push romaicus/apimgr:$2
-docker push romaicus/apimgr:latest
+#docker tag romaicus/apimgr:$TAG romaicus/apimgr:latest
+#docker push romaicus/apimgr:$TAG
+#docker push romaicus/apimgr:latest
