@@ -49,7 +49,7 @@ node {
 
             //TODO: Later make it PROD
             if (targetEnvironment.equals('main')) {
-                targetEnvironment = 'dev'
+                targetEnvironment = 'prod'
             }
 
             echo ">>>>>>>>>>>>>>>>>>>>>>> Building for branch: '${targetEnvironment}' <<<<<<<<<<<<<<<<<<<<<<"

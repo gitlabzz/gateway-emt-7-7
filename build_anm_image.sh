@@ -21,6 +21,11 @@ cat license.lic
   --parent-image=romaicus/apim_base:$RELEASE \
   --out-image=romaicus/apim_anm:$TAG
 
+# create latest tag
 #docker tag romaicus/apim_anm:$TAG romaicus/apim_anm:latest
+
+# push image with release tag
 #docker push romaicus/apim_anm:$TAG
+
+# push same image using 'latest' tag
 #docker push romaicus/apim_anm:latest
