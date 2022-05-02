@@ -13,9 +13,9 @@ echo
 echo "Building API Manager Image"
 ./build_apimgr_image.sh "$@"
 
-echo
-echo "Building API Gateway Analytics Image"
-./build_aga_image.sh "$@"
+#echo
+#echo "Building API Gateway Analytics Image"
+#./build_aga_image.sh "$@"
 
 echo
 echo "Building API Portal Image"

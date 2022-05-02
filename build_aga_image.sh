@@ -8,7 +8,7 @@ echo "----------- Using following license ----------- "
 cat license.lic
 
 ./apigw-emt-scripts-2.4.0/build_aga_image.py \
-  --installer=../APIGateway_7.7.20220228_Install_linux-x86-64_BN02.run \
+  --installer=$HOME/APIGateway_7.7.20220228_Install_linux-x86-64_BN02.run \
   --license=license.lic \
   --os=centos7 \
   --merge-dir=aga/merge-dir/analytics \
