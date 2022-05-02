@@ -48,17 +48,17 @@ node {
             targetEnvironment = BRANCH_NAME.toLowerCase()
 
             //TODO: Later make it PROD
-            if(targetEnvironment.equals('main')){
+            if (targetEnvironment.equals('main')) {
                 targetEnvironment = 'dev'
             }
 
             echo ">>>>>>>>>>>>>>>>>>>>>>> Building for branch: '${targetEnvironment}' <<<<<<<<<<<<<<<<<<<<<<"
 
             if (targetEnvironment.equalsIgnoreCase('dev')) {
-                sh './build_all.sh ${targetEnvironment} ${dateTimeSignature}'
+                sh "./build_all.sh ${targetEnvironment} ${dateTimeSignature}"
             } else {
                 input message: 'Please approve to proceed', ok: 'approve'
-                sh './build_all.sh ${targetEnvironment} ${dateTimeSignature}'
+                sh "./build_all.sh ${targetEnvironment} ${dateTimeSignature}"
             }
 
             echo ">>>>>>>>>>>>>>>>>>>>>>> Build Completed for branch: '${targetEnvironment}' <<<<<<<<<<<<<<<<<<<<<<"
