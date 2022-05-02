@@ -16,9 +16,9 @@ cat license.lic
   --pol=apimgr/policy/$1/bct.pol \
   --env=apimgr/environment/$1/bct.env \
   --fed-pass-file=apimgr/nopass.txt \
-  --parent-image=romaicus/apim_base:77-20220416 \
-  --out-image=romaicus/apimgr:77-20220416
+  --parent-image=romaicus/apim_base:$2 \
+  --out-image=romaicus/apimgr:$2
 
-#docker tag romaicus/apimgr:77-20220416 romaicus/apimgr:latest
-#docker push romaicus/apimgr:77-20220416
-#docker push romaicus/apimgr:latest
+docker tag romaicus/apimgr:$2 romaicus/apimgr:latest
+docker push romaicus/apimgr:$2
+docker push romaicus/apimgr:latest

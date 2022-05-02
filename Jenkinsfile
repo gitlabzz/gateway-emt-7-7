@@ -1,8 +1,9 @@
 node {
 
     def branchName
-    def targetEnvironment
     def pullRequest
+    def targetEnvironment
+    def dateTimeSignature
 
     stage('Initialize') {
         branchName = BRANCH_NAME
@@ -36,10 +37,35 @@ node {
         }
     }
 
-    stage('Build') {
+    stage('Generate Image DateTime Signature') {
+        Date now = new Date()
+        dateTimeSignature = "" + now[Calendar.DAY_OF_MONTH] + now.toMonth() + now.toYear() + hourOfnow[Calendar.HOUR_OF_DAY] Day + now[Calendar.MINUTE] + now[Calendar.SECOND]
+        echo " >>>>>>>>>>>>>>>>>> Generated Image DateTime Signature is: ${dateTimeSignature}"
+    }
+
+    stage('Build API Manger Image') {
         withDockerRegistry(credentialsId: 'hub.docker.credentials', url: 'https://index.docker.io') {
-            sh './build_all.sh dev'
-            echo ">>>>>>>>>>>>>>>>>>>>>>> DONE <<<<<<<<<<<<<<<<<<<<<<"
+
+            targetEnvironment = branchName.toLowerCase()
+
+            if (targetEnvironment.equalsIgnoreCase('dev')) {
+                sh './build_all.sh ${targetEnvironment} ${dateTimeSignature}'
+            } else {
+                input message: 'Please approve to proceed', ok: 'approve'
+                sh './build_all.sh ${targetEnvironment}'
+            }
+
+            echo ">>>>>>>>>>>>>>>>>>>>>>> Build Completed for branch: '${branchName}' <<<<<<<<<<<<<<<<<<<<<<"
         }
     }
+
+    stage('Tag API Manger Image') {
+
+    }
+
+    stage('Push API Manger Image') {
+
+    }
+
+
 }

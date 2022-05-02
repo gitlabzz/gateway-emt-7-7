@@ -16,9 +16,9 @@ cat license.lic
   --metrics \
   --anm-username=admin \
   --anm-pass-file=anm/anm.pass.txt \
-  --parent-image=romaicus/apim_base:77-20220416 \
-  --out-image=romaicus/apim_anm:77-20220416
+  --parent-image=romaicus/apim_base:$2 \
+  --out-image=romaicus/apim_anm:$2
 
-#docker tag romaicus/apim_anm:77-20220416 romaicus/apim_anm:latest
-#docker push romaicus/apim_anm:77-20220416
-#docker push romaicus/apim_anm:latest
+docker tag romaicus/apim_anm:$2 romaicus/apim_anm:latest
+docker push romaicus/apim_anm:$2
+docker push romaicus/apim_anm:latest
