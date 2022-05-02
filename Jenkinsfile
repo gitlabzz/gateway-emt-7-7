@@ -52,14 +52,16 @@ node {
                 targetEnvironment = 'dev'
             }
 
+            echo ">>>>>>>>>>>>>>>>>>>>>>> Building for branch: '${targetEnvironment}' <<<<<<<<<<<<<<<<<<<<<<"
+
             if (targetEnvironment.equalsIgnoreCase('dev')) {
                 sh './build_all.sh ${targetEnvironment} ${dateTimeSignature}'
             } else {
                 input message: 'Please approve to proceed', ok: 'approve'
-                sh './build_all.sh ${targetEnvironment}'
+                sh './build_all.sh ${targetEnvironment} ${dateTimeSignature}'
             }
 
-            echo ">>>>>>>>>>>>>>>>>>>>>>> Build Completed for branch: '${branchName}' <<<<<<<<<<<<<<<<<<<<<<"
+            echo ">>>>>>>>>>>>>>>>>>>>>>> Build Completed for branch: '${targetEnvironment}' <<<<<<<<<<<<<<<<<<<<<<"
         }
     }
 
