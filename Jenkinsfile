@@ -1,4 +1,9 @@
 node {
+
+    def branchName
+    def targetEnvironment
+    def pullRequest
+
     stage('Initialize') {
         branchName = BRANCH_NAME
         echo "checking if it's a pull request branch!"
